@@ -10,17 +10,17 @@
     <div id="app">
         <h2>アカウント作成</h2>
         <!-- パスワード入力  v-model使用 -->        
-        
+        パスワード:<input type="password" name="password" v-model="password" placeholder="パスワード">
         <!-- パスワード確認入力 v-model使用 -->        
-      
+        パスワード確認:<input type="password" name="password" v-model="password_conf" placeholder="パスワード確認">
         <!-- 登録ボタン　条件付きレンダリング -->
         　<!-- パスワード一致の場合、登録ボタン -->
-
+        <button name="submit" v-if="submit">登録</button> 
         　<!-- パスワード不一致の場合、使用不可ボタン　-->
-        
+        <button name="submit" v-else>使用不可</button>
         <!-- メッセージ　条件付きレンダリング -->
         　<!-- パスワード不一致の場合、メッセージ表示　-->
-        
+        <p v-if="isSubmit">パスワードが一致しません</p>
       </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="./script/script.js"></script>
